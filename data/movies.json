@@ -1,58 +1,303 @@
 [
   {
     "id": "1",
-    "title": "The Grand Adventure",
-    "year": 2019,
-    "imageUrl": "https://placehold.co/400x600/1d3557/ffffff?text=The+Grand+Adventure",
-    "createdAt": "2026-01-01T00:00:00.000Z"
+    "title": "Hercules",
+    "year": 1997,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/65/Hercules_%281997_film%29_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
   },
   {
     "id": "2",
-    "title": "Midnight in Paris",
-    "year": 2011,
-    "imageUrl": "https://placehold.co/400x600/6a0572/ffffff?text=Midnight+in+Paris",
-    "createdAt": "2026-01-01T00:00:00.000Z"
+    "title": "Sherlock",
+    "year": 2010,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4d/Sherlock_titlecard.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
   },
   {
     "id": "3",
-    "title": "Starlight Express",
-    "year": 2015,
-    "imageUrl": "https://placehold.co/400x600/2a9d8f/ffffff?text=Starlight+Express",
-    "createdAt": "2026-01-01T00:00:00.000Z"
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fb/Lord_Rings_Fellowship_Ring.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
   },
   {
     "id": "4",
-    "title": "The Last Lighthouse",
-    "year": 2021,
-    "imageUrl": "https://placehold.co/400x600/e76f51/ffffff?text=The+Last+Lighthouse",
-    "createdAt": "2026-01-01T00:00:00.000Z"
+    "title": "The Lord of the Rings: The Two Towers",
+    "year": 2002,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/a1/Lord_Rings_Two_Towers.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
   },
   {
     "id": "5",
-    "title": "Neon Nights",
-    "year": 2018,
-    "imageUrl": "https://placehold.co/400x600/f4a261/222222?text=Neon+Nights",
-    "createdAt": "2026-01-01T00:00:00.000Z"
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/48/Lord_Rings_Return_King.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
   },
   {
     "id": "6",
-    "title": "Whispering Pines",
-    "year": 2013,
-    "imageUrl": "https://placehold.co/400x600/264653/ffffff?text=Whispering+Pines",
-    "createdAt": "2026-01-01T00:00:00.000Z"
+    "title": "The Hobbit: An Unexpected Journey",
+    "year": 2012,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b3/The_Hobbit-_An_Unexpected_Journey.jpeg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
   },
   {
     "id": "7",
-    "title": "Desert Mirage",
-    "year": 2022,
-    "imageUrl": "https://placehold.co/400x600/bc6c25/ffffff?text=Desert+Mirage",
-    "createdAt": "2026-01-01T00:00:00.000Z"
+    "title": "The Hobbit: The Desolation of Smaug",
+    "year": 2013,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4f/The_Hobbit_-_The_Desolation_of_Smaug_theatrical_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
   },
   {
     "id": "8",
-    "title": "The Clockmaker's Son",
+    "title": "The Hobbit: The Battle of the Five Armies",
+    "year": 2014,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e7/The_Hobbit_-_The_Battle_of_the_Five_Armies.png",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "9",
+    "title": "Up",
     "year": 2009,
-    "imageUrl": "https://placehold.co/400x600/3a0ca3/ffffff?text=The+Clockmaker%27s+Son",
-    "createdAt": "2026-01-01T00:00:00.000Z"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "title": "How to Train Your Dragon",
+    "year": 2010,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/99/How_to_Train_Your_Dragon_Poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "11",
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "year": 2001,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7a/Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "12",
+    "title": "Harry Potter and the Chamber of Secrets",
+    "year": 2002,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c0/Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "13",
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "year": 2004,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/18/Harry_Potter_and_the_Prisoner_of_Azkaban_film_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "14",
+    "title": "Harry Potter and the Goblet of Fire",
+    "year": 2005,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c9/Harry_Potter_and_the_Goblet_of_Fire_Poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "15",
+    "title": "Harry Potter and the Order of the Phoenix",
+    "year": 2007,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e7/Harry_Potter_and_the_Order_of_the_Phoenix_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "16",
+    "title": "Harry Potter and the Half-Blood Prince",
+    "year": 2009,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3f/Harry_Potter_and_the_Half-Blood_Prince_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "17",
+    "title": "Harry Potter and the Deathly Hallows: Part 2",
+    "year": 2011,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/df/Harry_Potter_and_the_Deathly_Hallows_%E2%80%93_Part_2.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "18",
+    "title": "The Lego Movie",
+    "year": 2014,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/10/The_Lego_Movie_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "19",
+    "title": "Spider-Man",
+    "year": 2002,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6c/Spider-Man_%282002_film%29_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "20",
+    "title": "Spider-Man 2",
+    "year": 2004,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4e/Spider-Man_2_USA_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "21",
+    "title": "Spider-Man 3",
+    "year": 2007,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7a/Spider-Man_3%2C_International_Poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "22",
+    "title": "The Amazing Spider-Man",
+    "year": 2012,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e0/The_Amazing_Spider-Man_%28film%29_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "23",
+    "title": "The Amazing Spider-Man 2",
+    "year": 2014,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/24/The_Amazing_Spider-Man_2_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "24",
+    "title": "Spider-Man: Into the Spider-Verse",
+    "year": 2018,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fa/Spider-Man_Into_the_Spider-Verse_poster.png",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "25",
+    "title": "Now You See Me",
+    "year": 2013,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c7/Now_You_See_Me_Poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "26",
+    "title": "Now You See Me 2",
+    "year": 2016,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Now_You_See_Me_2_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "27",
+    "title": "Miraculous: Ladybug & Cat Noir, The Movie",
+    "year": 2023,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/02/Ladybug_%26_Cat_Noir_-_The_Movie_%28poster%29.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "28",
+    "title": "Twilight",
+    "year": 2008,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b6/Twilight_%282008_film%29_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "29",
+    "title": "The Twilight Saga: New Moon",
+    "year": 2009,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/9/93/The_Twilight_Saga-_New_Moon_poster.JPG",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "30",
+    "title": "The Twilight Saga: Eclipse",
+    "year": 2010,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/d7/Eclipse_Theatrical_One-Sheet.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "31",
+    "title": "The Twilight Saga: Breaking Dawn - Part 1",
+    "year": 2011,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c2/Breaking_Dawn_Part_1_Poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "32",
+    "title": "The Twilight Saga: Breaking Dawn - Part 2",
+    "year": 2012,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/49/The_Twilight_Saga_Breaking_Dawn_Part_2_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "33",
+    "title": "Guardians of the Galaxy Vol. 3",
+    "year": 2023,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/74/Guardians_of_the_Galaxy_Vol._3_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "34",
+    "title": "The Social Network",
+    "year": 2010,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/8c/The_Social_Network_film_poster.png",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "35",
+    "title": "Jumanji: Welcome to the Jungle",
+    "year": 2017,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/dc/Jumanji_Welcome_to_the_Jungle.png",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "36",
+    "title": "X-Men: First Class",
+    "year": 2011,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/55/X-MenFirstClassMoviePoster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "37",
+    "title": "Inception",
+    "year": 2010,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "38",
+    "title": "Pawn Sacrifice",
+    "year": 2014,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/15/Pawn_Sacrifice_Poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "39",
+    "title": "Madagascar",
+    "year": 2005,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/36/Madagascar_Theatrical_Poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "40",
+    "title": "Madagascar: Escape 2 Africa",
+    "year": 2008,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7f/Madagascar2poster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "41",
+    "title": "Lego DC Comics Super Heroes: The Flash",
+    "year": 2018,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4d/Lego_DC_Comics_Super_Heroes_The_Flash.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "42",
+    "title": "The Lego Batman Movie",
+    "year": 2017,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/61/The_Lego_Batman_Movie_PromotionalPoster.jpg",
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "43",
+    "title": "Monsters, Inc.",
+    "year": 2001,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/63/Monsters_Inc.JPG",
+    "createdAt": "2026-11-01T00:00:00.000Z"
   }
 ]
