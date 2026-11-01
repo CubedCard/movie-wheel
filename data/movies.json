@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "title": "The Grand Adventure",
+    "year": 2019,
+    "imageUrl": "https://placehold.co/400x600/1d3557/ffffff?text=The+Grand+Adventure",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Midnight in Paris",
+    "year": 2011,
+    "imageUrl": "https://placehold.co/400x600/6a0572/ffffff?text=Midnight+in+Paris",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "Starlight Express",
+    "year": 2015,
+    "imageUrl": "https://placehold.co/400x600/2a9d8f/ffffff?text=Starlight+Express",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "title": "The Last Lighthouse",
+    "year": 2021,
+    "imageUrl": "https://placehold.co/400x600/e76f51/ffffff?text=The+Last+Lighthouse",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "title": "Neon Nights",
+    "year": 2018,
+    "imageUrl": "https://placehold.co/400x600/f4a261/222222?text=Neon+Nights",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "title": "Whispering Pines",
+    "year": 2013,
+    "imageUrl": "https://placehold.co/400x600/264653/ffffff?text=Whispering+Pines",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "7",
+    "title": "Desert Mirage",
+    "year": 2022,
+    "imageUrl": "https://placehold.co/400x600/bc6c25/ffffff?text=Desert+Mirage",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "title": "The Clockmaker's Son",
+    "year": 2009,
+    "imageUrl": "https://placehold.co/400x600/3a0ca3/ffffff?text=The+Clockmaker%27s+Son",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  }
+]
