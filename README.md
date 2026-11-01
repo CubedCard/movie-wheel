@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Movie Wheel
 
-## Getting Started
+Can't decide what to watch? Spin the wheel.
 
-First, run the development server:
+Movie Wheel is a small Next.js app with a spinning carousel of movie posters.
+Hit "Spin" and it lands on a random movie from your collection. There's a
+password-protected `/admin` page for adding and removing movies (title, year,
+poster image URL).
+
+## What it does
+
+- **`/`** — the wheel. Renders the movie collection as a horizontally
+  scrolling carousel and animates a spin to a random pick.
+- **`/admin`** — add/delete movies. Protected by a login.
+- **`/admin/login`** — simple username/password form.
+- **API routes** (`/api/movies`, `/api/movies/[id]`, `/api/login`,
+  `/api/logout`) — CRUD for movies and session login/logout.
+- **Auth** — a signed (HMAC) session cookie, checked in `src/proxy.ts`
+  (Next's middleware-equivalent) to guard the admin page and the
+  mutating movie endpoints.
+- **Storage** — movies are persisted as JSON in `data/movies.json`. No
+  database yet — it's a flat file read/written by `src/lib/movies.ts`.
+
+This is intentionally a quick, "just make it work" build — see the plan
+below for where it's headed.
+
+## Running it
+
+Requirements: Node.js (see `package.json`/`next.config.ts` for the Next
+version in use) and npm.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Admin login
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Default credentials are `admin` / `admin` unless overridden. Set these in
+a `.env.local` file to change them:
 
-## Learn More
+```bash
+ADMIN_USERNAME=youradminname
+ADMIN_PASSWORD=yourpassword
+SESSION_SECRET=some-long-random-string
+```
 
-To learn more about Next.js, take a look at the following resources:
+`SESSION_SECRET` signs the session cookie — set a real random value before
+deploying anywhere public.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Other scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build   # production build
+npm run start   # run the production build
+npm run lint    # eslint
+```
 
-## Deploy on Vercel
+## The plan: a DDD / clean architecture backend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The current backend (`src/lib/movies.ts`, `src/lib/auth.ts`, the API routes)
+is deliberately "slop": business logic, persistence, and HTTP concerns are
+all smashed together so the frontend had something to talk to. This repo is
+also a practice ground for learning **Domain-Driven Design and Clean
+Architecture**, so the plan is to rebuild the backend properly behind the
+same API surface the frontend already uses:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Domain layer** — a `Movie` entity/value objects and the rules around it
+  (e.g. what makes a movie valid, how a pick is selected), with no
+  framework or storage code at all.
+- **Application layer** — use cases like `AddMovie`, `DeleteMovie`,
+  `ListMovies`, `PickRandomMovie`, `AuthenticateAdmin`, orchestrating domain
+  logic and depending only on repository *interfaces*.
+- **Infrastructure layer** — concrete implementations of those
+  repositories: a filesystem/JSON one to start, swappable later for a real
+  database, plus the actual session/crypto implementation behind an
+  `AuthService` interface.
+- **Interface/adapter layer** — the Next.js route handlers become thin
+  controllers that call use cases and map results to HTTP responses; no
+  business logic left in `src/app/api/**`.
+
+Goals for this refactor:
+
+1. Keep the frontend (`MovieWheel`, `AdminMovieManager`) untouched — the
+   API contract stays the same.
+2. Introduce clear dependency direction: domain depends on nothing,
+   application depends on domain, infrastructure/interfaces depend inward.
+3. Swap the JSON file store for a real database later without touching
+   domain or application code — that's the test of whether the boundaries
+   actually held.
+4. Use this as a repeatable learning exercise: small, deliberate steps
+   (domain first, then use cases, then infra, then wiring) rather than a
+   big-bang rewrite.
