@@ -93,3 +93,16 @@ Goals for this refactor:
 4. Use this as a repeatable learning exercise: small, deliberate steps
    (domain first, then use cases, then infra, then wiring) rather than a
    big-bang rewrite.
+
+## Future product ideas
+
+These are ideas to explore, not requirements for the current backend:
+
+- Categorize movies and optionally limit a spin to selected categories.
+- Use ratings or other preferences to influence how likely a movie is to be picked.
+- Record each spin (when it happened and which movie was selected). Keep
+  timestamped watch-history events so recent-watch rules and popularity
+  summaries can be derived. Let users record a viewing right after a spin or
+  later from the movie collection.
+- Keep watch history and optionally exclude movies watched recently (for example,
+  within the last two weeks), with a way to include them again.
