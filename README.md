@@ -15,21 +15,22 @@ poster image URL).
 - **`/admin/login`** — simple username/password form.
 - **API routes** (`/api/movies`, `/api/movies/[id]`, `/api/login`,
   `/api/logout`) — CRUD for movies and session login/logout.
-- **Auth** — a signed (HMAC) session cookie, checked in `src/proxy.ts`
+- **Auth** — a signed (HMAC) session cookie, checked in `web/src/proxy.ts`
   (Next's middleware-equivalent) to guard the admin page and the
   mutating movie endpoints.
-- **Storage** — movies are persisted as JSON in `data/movies.json`. No
-  database yet — it's a flat file read/written by `src/lib/movies.ts`.
+- **Storage** — movies are currently persisted as JSON in
+  `web/data/movies.json`, read and written by `web/src/lib/movies.ts`.
 
 This is intentionally a quick, "just make it work" build — see the plan
 below for where it's headed.
 
 ## Running it
 
-Requirements: Node.js (see `package.json`/`next.config.ts` for the Next
-version in use) and npm.
+Requirements: Node.js (see `web/package.json`/`web/next.config.ts` for the
+Next version in use) and npm.
 
 ```bash
+cd web
 npm install
 npm run dev
 ```
@@ -39,7 +40,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ### Admin login
 
 Default credentials are `admin` / `admin` unless overridden. Set these in
-a `.env.local` file to change them:
+`web/.env.local` to change them:
 
 ```bash
 ADMIN_USERNAME=youradminname
@@ -53,56 +54,52 @@ deploying anywhere public.
 ### Other scripts
 
 ```bash
+cd web
 npm run build   # production build
 npm run start   # run the production build
 npm run lint    # eslint
 ```
 
-## The plan: a DDD / clean architecture backend
+## Go backend learning plan
 
-The current backend (`src/lib/movies.ts`, `src/lib/auth.ts`, the API routes)
-is deliberately "slop": business logic, persistence, and HTTP concerns are
-all smashed together so the frontend had something to talk to. This repo is
-also a practice ground for learning **Domain-Driven Design and Clean
-Architecture**, so the plan is to rebuild the backend properly behind the
-same API surface the frontend already uses:
+The existing Next.js backend remains in `web/` while a separate Go service
+is developed in `backend/`. This repository is a practice ground for
+learning **Go, Domain-Driven Design, and Clean Architecture**. The first
+backend slice will be built and tested independently before connecting it
+to the frontend.
 
-- **Domain layer** — a `Movie` entity/value objects and the rules around it
-  (e.g. what makes a movie valid, how a pick is selected), with no
-  framework or storage code at all.
-- **Application layer** — use cases like `AddMovie`, `DeleteMovie`,
-  `ListMovies`, `PickRandomMovie`, `AuthenticateAdmin`, orchestrating domain
-  logic and depending only on repository *interfaces*.
-- **Infrastructure layer** — concrete implementations of those
-  repositories: a filesystem/JSON one to start, swappable later for a real
-  database, plus the actual session/crypto implementation behind an
-  `AuthService` interface.
-- **Interface/adapter layer** — the Next.js route handlers become thin
-  controllers that call use cases and map results to HTTP responses; no
-  business logic left in `src/app/api/**`.
+The first backend slice has these working decisions:
 
-Goals for this refactor:
+- Use SQLite with Ent for persistence. Keep Ent-generated types in
+  infrastructure; domain and application code must not depend on Ent.
+- `POST /api/spins` creates a new spin each time, takes no request body for
+  now, and chooses uniformly from all eligible movies. If no movie is
+  eligible, return `204 No Content`.
+- Persist the spin ID, selected movie ID, and spin time. Return the spin
+  information and the selected movie fields needed by the wheel (ID, title,
+  year, and image URL).
+- Keep watch history as separate timestamped viewing records. A viewing can
+  be recorded from a spin result or later from the movie collection; only the
+  first flow has a related spin ID.
 
-1. Keep the frontend (`MovieWheel`, `AdminMovieManager`) untouched — the
-   API contract stays the same.
-2. Introduce clear dependency direction: domain depends on nothing,
-   application depends on domain, infrastructure/interfaces depend inward.
-3. Swap the JSON file store for a real database later without touching
-   domain or application code — that's the test of whether the boundaries
-   actually held.
-4. Use this as a repeatable learning exercise: small, deliberate steps
-   (domain first, then use cases, then infra, then wiring) rather than a
-   big-bang rewrite.
+The Go module will contain four packages with inward dependency direction:
+
+- **Domain** — business concepts and rules, with no HTTP, database, or ORM
+  dependencies.
+- **Application** — named use cases that coordinate domain behavior and
+  repository interfaces.
+- **Infrastructure** — SQLite/Ent implementations and mappings at the edge.
+- **API** — thin Go HTTP handlers that translate requests and responses.
+
+Keep changes small enough to learn from. Do not add patterns solely to match
+an architecture diagram.
 
 ## Future product ideas
 
-These are ideas to explore, not requirements for the current backend:
+These are ideas to explore after the first slice:
 
 - Categorize movies and optionally limit a spin to selected categories.
 - Use ratings or other preferences to influence how likely a movie is to be picked.
-- Record each spin (when it happened and which movie was selected). Keep
-  timestamped watch-history events so recent-watch rules and popularity
-  summaries can be derived. Let users record a viewing right after a spin or
-  later from the movie collection.
-- Keep watch history and optionally exclude movies watched recently (for example,
-  within the last two weeks), with a way to include them again.
+- Exclude movies watched recently (for example, within the last two weeks),
+  with a way to include them again.
+- Derive popularity summaries or leaderboards from watch-history events.
