@@ -27,17 +27,19 @@ func (m *Movie) Validate() error {
 	return nil
 }
 
-func CreateMovie(title string, year *int, imageUrl string) error {
+func CreateMovie(title string, year *int, imageUrl string) *Movie {
+	now := time.Now()
+
 	m := &Movie{
 		Id:        uuid.Must(uuid.NewV7()),
 		Title:     title,
 		Year:      year,
 		ImageUrl:  imageUrl,
-		CreatedAt: time.Now(),
-		UpdatedAt: time.Now(),
+		CreatedAt: now,
+		UpdatedAt: now,
 	}
 
-	return m.Validate()
+	return m
 }
 
 func (m *Movie) UpdateImageUrl(imageUrl string) error {
