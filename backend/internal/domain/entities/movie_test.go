@@ -42,10 +42,13 @@ func TestValidation(t *testing.T) {
 	}
 
 	movie.Id = uuid.Must(uuid.NewV7())
-	movie.Title = "sh"
+	titles := [2]string{"", "s"}
 
-	if movie.Validate() == nil {
-		t.Errorf("Expected movie.Validate() to throw an error when Title is %d characters long", len(movie.Title))
+	for _, title := range titles {
+		movie.Title = title
+		if movie.Validate() == nil {
+			t.Errorf("Expected movie.Validate() to throw an error when Title is %d characters long", len(movie.Title))
+		}
 	}
 }
 

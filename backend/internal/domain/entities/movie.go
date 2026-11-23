@@ -20,8 +20,8 @@ func (m *Movie) Validate() error {
 	if m.Id == uuid.Nil {
 		return fmt.Errorf("%w: Id must not be empty", ErrValidation)
 	}
-	if len(m.Title) < 3 {
-		return fmt.Errorf("%w: Title must be at least 3 characters long", ErrValidation)
+	if len(m.Title) < 2 {
+		return fmt.Errorf("%w: Title must be at least 2 characters long", ErrValidation)
 	}
 
 	return nil
