@@ -50,17 +50,26 @@ func (m *Movie) UpdateImageUrl(imageUrl string) error {
 	m.ImageUrl = imageUrl
 	m.UpdatedAt = time.Now()
 
-	return m.Validate()
+	return nil
 }
 
 func (m *Movie) UpdateTitle(title string) error {
+	oldTitle := m.Title
 	m.Title = title
+	err := m.Validate()
 
-	return m.Validate()
+	if err != nil {
+		m.Title = oldTitle
+		return err
+	}
+
+	m.UpdatedAt = time.Now()
+	return nil
 }
 
 func (m *Movie) UpdateYear(year *int) error {
 	m.Year = year
+	m.UpdatedAt = time.Now()
 
-	return m.Validate()
+	return nil
 }
