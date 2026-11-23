@@ -27,7 +27,7 @@ func (m *Movie) Validate() error {
 	return nil
 }
 
-func CreateMovie(title string, year *int, imageUrl string) *Movie {
+func CreateMovie(title string, year *int, imageUrl string) (*Movie, error) {
 	now := time.Now()
 
 	m := &Movie{
@@ -39,7 +39,11 @@ func CreateMovie(title string, year *int, imageUrl string) *Movie {
 		UpdatedAt: now,
 	}
 
-	return m
+	if m.Validate() != nil {
+		return &Movie{}, fmt.Errorf("%w: Validation failed", ErrValidation)
+	}
+
+	return m, nil
 }
 
 func (m *Movie) UpdateImageUrl(imageUrl string) error {

@@ -10,7 +10,11 @@ func TestCreation(t *testing.T) {
 	title := "title"
 	year := 1999
 	imageUrl := "https://url.example.com"
-	movie := CreateMovie(title, &year, imageUrl)
+	movie, err := CreateMovie(title, &year, imageUrl)
+
+	if err != nil {
+		t.Errorf("Expected movie to be created, but got an error: %s", err)
+	}
 
 	if movie.Title != title {
 		t.Errorf("Expected movie title to be %s, but got %s", title, movie.Title)
@@ -33,7 +37,7 @@ func TestValidation(t *testing.T) {
 	title := "title"
 	year := 1999
 	imageUrl := "https://url.example.com"
-	movie := CreateMovie(title, &year, imageUrl)
+	movie, _ := CreateMovie(title, &year, imageUrl)
 
 	movie.Id = uuid.Nil
 
@@ -56,7 +60,7 @@ func TestUpdateImageUrl(t *testing.T) {
 	title := "title"
 	year := 1999
 	imageUrl := "https://url.example.com"
-	movie := CreateMovie(title, &year, imageUrl)
+	movie, _ := CreateMovie(title, &year, imageUrl)
 
 	newUrl := "new_url"
 
@@ -71,7 +75,7 @@ func TestUpdateTitle(t *testing.T) {
 	title := "title"
 	year := 1999
 	imageUrl := "https://url.example.com"
-	movie := CreateMovie(title, &year, imageUrl)
+	movie, _ := CreateMovie(title, &year, imageUrl)
 
 	newTitle := "new_url"
 
@@ -86,7 +90,7 @@ func TestUpdateYear(t *testing.T) {
 	title := "title"
 	year := 1999
 	imageUrl := "https://url.example.com"
-	movie := CreateMovie(title, &year, imageUrl)
+	movie, _ := CreateMovie(title, &year, imageUrl)
 
 	newYear := 2000
 
